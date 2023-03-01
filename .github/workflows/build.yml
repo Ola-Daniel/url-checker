@@ -35,3 +35,13 @@ jobs:
         asset_path: ./go-hello-$(git describe --tags --always --dirty)
         asset_name: go-hello-$(git describe --tags --always --dirty)
         asset_content_type: application/octet-stream
+
+
+    - name: Create Git Tag
+      if: startsWith(github.ref, 'refs/tags/v')
+      run: |
+        git tag -a ${{ github.ref }} -m "Release ${{ github.ref }}"
+        git push origin ${{ github.ref }}
+
+
+        
