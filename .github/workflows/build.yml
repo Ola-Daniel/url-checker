@@ -52,8 +52,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./go-hello-$(git describe --tags --always --dirty)
-        asset_name: go-hello-$(git describe --tags --always --dirty)
+        asset_path: ./url-checker-$(git describe --tags --always --dirty)
+        asset_name: url-checker-$(git describe --tags --always --dirty)
         asset_content_type: application/octet-stream
 
 
